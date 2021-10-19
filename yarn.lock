@@ -2153,6 +2153,11 @@ axios@0.22.0:
   dependencies:
     follow-redirects "^1.14.4"
 
+azure-function-log-intercept@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/azure-function-log-intercept/-/azure-function-log-intercept-1.0.10.tgz#c77a008d7844d73a01a2d482215cc46d21eb1cf1"
+  integrity sha512-NssHTq2S3P1rZzztpdmny0gDbk7HD5rs7BX2NOxzo0gpUTR8yI28NW3c0HxXM7b/tm5MM1YGLwu6ih5Rd1obtw==
+
 babel-jest@^27.2.5:
   version "27.2.5"
   resolved "https://registry.npmjs.org/babel-jest/-/babel-jest-27.2.5.tgz"
