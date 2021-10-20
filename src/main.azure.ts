@@ -8,19 +8,19 @@ export const loggerWrapper = {
 
 export async function createApp(): Promise<INestApplication> {
   const logger = (loggerWrapper as any).logger;
-  logger.info('we are starting');
-  logger.info(process.env);
+  logger('we are starting');
+  logger(process.env);
   const app = await NestFactory.create(AppModule, {
-    logger: (loggerWrapper as any).logger,
+    logger,
   });
   app.setGlobalPrefix('api');
 
   try {
-    logger.info('app will init');
+    logger('app will init');
     await app.init();
-    logger.info('app is OK');
+    logger('app is OK');
     return app;
   } catch (e) {
-    logger.info('app NOK', e);
+    logger.error('app NOK', e);
   }
 }

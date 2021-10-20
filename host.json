@@ -3,7 +3,8 @@
   "logging": {
     "fileLoggingMode": "always",
     "logLevel": {
-      "Function": "Trace"
+      "Function": "Trace",
+      "Function.main.User": "Trace"
     }
   }
 }
