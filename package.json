@@ -40,7 +40,8 @@
     "umzug": "^3.0.0-beta.16",
 
     "sequelize": "^6.6.2",
-    "@apollo/client": "^3.4.13"
+    "@apollo/client": "^3.4.13",
+    "apollo-server-express": "^2.25.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

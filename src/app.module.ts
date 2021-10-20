@@ -2,16 +2,31 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Sequelize } from 'sequelize';
+import { GraphQLModule } from '@nestjs/graphql';
+import { AppResolver } from './app.resolver';
 
 export const isPgsql = (process.env.NX_DB_DIALECT || 'postgres') === 'postgres';
 export const isMssql = process.env.NX_DB_DIALECT === 'mssql';
 
 @Module({
-  imports: [],
+  imports: [
+    GraphQLModule.forRootAsync({
+      useFactory: async () => {
+        return {
+          installSubscriptionHandlers: true,
+          autoSchemaFile: process.env.TMP + '\\test.graphql',
+          debug: true,
+          context: ({ req }) => ({ req }),
+          sortSchema: true,
+          useGlobalPrefix: true,
+        };
+      },
+    }),
+  ],
   controllers: [AppController],
   providers: [
     AppService,
-
+    AppResolver,
     {
       provide: 'SEQUELIZE',
       inject: [],
